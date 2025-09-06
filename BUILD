@@ -1,3 +1,5 @@
+load("@aspect_rules_ts//ts:defs.bzl", "ts_config")
+
 """Targets in the repository root"""
 
 # We prefer BUILD instead of BUILD.bazel
@@ -13,4 +15,10 @@ npm_link_all_packages(name = "node_modules")
 gazelle(
     name = "gazelle",
     gazelle = "@multitool//tools/gazelle",
+)
+
+ts_config(
+    name = "tsconfig_base",
+    src = "tsconfig.base.json",
+    visibility = ["//visibility:public"],
 )
