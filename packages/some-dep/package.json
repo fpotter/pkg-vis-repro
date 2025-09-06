@@ -1,0 +1,9 @@
+{
+  "name": "some-dep",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.js",
+  "private": true,
+  "version": "0.0.0"
+}

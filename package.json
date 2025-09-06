@@ -10,5 +10,8 @@
   },
   "pnpm": {
     "onlyBuiltDependencies": []
+  },
+  "dependencies": {
+    "some-dep": "workspace:*"
   }
 }
