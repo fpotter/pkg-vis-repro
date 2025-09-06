@@ -13,7 +13,7 @@ direnv allow
 bazel run //tools:bazel_env
 ```
 
-When package is imported as //:node_modules/some-dep, visibility is honored.  The following build will fail.
+When package is imported as `//:node_modules/some-dep`, visibility is honored.  The following build will fail.
 
 ```sh
 $ bazel build //packages/from-root
@@ -25,7 +25,7 @@ Recommendation: modify the visibility declaration if you think the dependency is
 ERROR: Build did NOT complete successfully
 ```
 
-When package is imported as :node_modules/some-dep, visibility not honored, but I'd expect it to be given `package_visibility` configuration in `npm_translate_lock` ([link](https://github.com/fpotter/pkg-vis-repro/blob/eb6abff09d5d888dc9f59f90287cdd8ac5b2639a/MODULE.bazel#L30)).  The following build succeeds.
+When package is imported as `:node_modules/some-dep`, visibility not honored, but I'd expect it to be given `package_visibility` configuration in `npm_translate_lock` ([link](https://github.com/fpotter/pkg-vis-repro/blob/eb6abff09d5d888dc9f59f90287cdd8ac5b2639a/MODULE.bazel#L30)).  The following build succeeds.
 
 ```sh
 $ bazel build //packages/from-local
